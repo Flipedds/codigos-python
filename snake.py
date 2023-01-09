@@ -39,11 +39,14 @@ apple.fill((255,0,0))
 my_direction = LEFT
 
 clock = pygame.time.Clock()
+velocidade = 20
+
 font = pygame.font.Font('freesansbold.ttf',18)
 score = 0
 game_over = False
 while not game_over:
-        clock.tick(30)
+        clock.tick(velocidade)
+
         for event in pygame.event.get():
                 if event.type == QUIT:
                         pygame.quit()
@@ -67,6 +70,9 @@ while not game_over:
                 colisao()
                 snake.append((0,0))
                 score = score + 1
+                velocidade = velocidade + 1
+
+                
    
 
         #colisao com paredes

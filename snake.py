@@ -10,7 +10,7 @@ def on_grid_random():
         y = random.randint(0,590)
         return (x//10 * 10, y//10 * 10)
 
-
+#o som trava a cobra
 def colisao():
         engine.say("nhau")
         engine.runAndWait()
@@ -64,13 +64,13 @@ while not game_over:
                         if event.key == K_RIGHT:
                                 my_direction = RIGHT
 
-        #se a cobra colidir com a maca
+        #se a cobra colidir com a maçã
         if collision(snake[0], apple_pos):
                 apple_pos = on_grid_random()
-                colisao()
+                #colisao() #emite o som
                 snake.append((0,0))
                 score = score + 1
-                velocidade = velocidade + 1
+                velocidade = velocidade + 5
 
                 
    
